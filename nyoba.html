@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script language="javascript">
+    function pilih()
+    {
+      var namarumah = document.getElementById("form").kategori.value;
+      if(namarumah=="almanda")
+      {
+        document.getElementById("tampil").innerHTML="ALMANDA";
+      } else if (namarumah=="mawar") 
+      {
+        document.getElementById("tampil").innerHTML="MAWAR";
+      }      
+    }
+    function proses()
+    {
+      var x;
+      x = document.getElementById("lamakreditinput").value;
+      document.getElementById("lamakreditoutput").value=x;
+    }
+  </script>
+</head>
+<body>
+  <form name="form" id="form">
+    <label for="">Pilihan Type Rumah</label>
+    <select name="kategori" id="kategori" onchange="pilih ()">
+      <option value="almanda">Almanda</option>
+      <option value="mawar">Mawar</option>
+    </select>
+    <br>
+    <br>
+    <table>
+      <tr>
+        <td>Type Rumah</td>
+        <td>=</td>
+        <td><div id="tampil"></div></td>
+      </tr>
+      <tr>
+        <td>Lama Kredit</td>
+        <td>=</td>
+        <td><input type="text" id="lamakreditinput"></td>
+      </tr>
+    </table>
+    <input type="button" value="Proses" onclick="proses ()">
+    <input type="reset" value="Reset">
+    <br>
+    <label for="">Lama Kredit Output</label>
+    <input type="text" id="lamakreditoutput">
+  </form>
+</body>
+</html>

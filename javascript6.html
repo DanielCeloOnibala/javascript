@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Latihan Javascript perhitungan bunga</title>
+	<script type="text/javascript" language="javascript">
+		function pilih()
+		{	
+			var typerumah=document.getElementById("isiform").kategori.value;
+			if (typerumah=="almanda")
+			{
+				document.getElementById("namarumah").innerHTML="ALMANDA";
+				document.getElementById("hargarumah").innerHTML=120000000;
+			} 
+			else if (typerumah=="mawar")
+			{
+				document.getElementById("namarumah").innerHTML="MAWAR";
+				document.getElementById("hargarumah").innerHTML=130000000;
+			}
+
+		}
+		function proses()
+		{
+			var x;
+			x = document.getElementById("lamakreditinput").value;
+			document.getElementById("lamakreditoutput").value=x;
+		}
+		
+	</script>
+	<style type="text/css">
+	/*Style*/
+	body {
+		background-color: #eaeaea;
+		text-align: center;
+	}
+	.container {
+		padding: 20px;
+		background-color: white;
+		margin: 0px 700px 0 50px;
+	}
+	table {
+		margin: auto;
+		font: 17px century gothic;
+	}
+	select {
+		padding: 5px 20px;
+		font: 15px arial, sans-serif;
+		width: 100%;
+	}
+	input {
+		font: 15px arial, sans-serif;
+		padding: 5px 0 5px 0 ;
+	}
+	input:hover {
+		background-color: lightcyan;
+	}
+	.tombol input {
+		padding: 10px;
+		margin-right: 10px;
+		border-radius: 6px;
+		border: 0px;
+	}
+	.info {
+		text-align: left;
+		font: 20px arial, sans-serif;
+	}
+	.info p {
+		font: 14px arial, sans-serif;
+	}
+	.bottomtable {
+		display: grid;
+		font: 15px century gothic;
+		text-align: left;
+		padding: 20px;
+		background-color: white;
+		margin: 20px 700px 0 50px;
+	}
+	.bottomtable table {
+		margin-left: 0px;
+	}
+	.bottomtable .table2 {
+		margin-top: 30px;
+	}
+</style>
+</head>
+<body>
+	<form name="isiform" id="isiform">
+		<div class="container">
+			<h2>PROGRAM KREDIT RUMAH</h2>
+			<hr>
+			<table>
+				<tr>
+					<td width="140px">Type Rumah</td>
+					<td align="left">
+					<select name="kategori" id="kategori" onchange="pilih ()">
+						<option disabled="">Pilihan Type Rumah</option>
+						<option value="almanda">Almanda</option>
+						<option value="mawar">Mawar</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td>Lama Kredit</td>
+					<td align="left"><input type="text" id="lamakreditinput"></td>
+				</tr>
+			</table>
+			<hr>
+			<div class="tombol">
+				<input type="button" value="Proses" onclick="proses ()">
+				<input type="reset" value="Reset">
+			</div>
+			<div class="info">
+				<h3>Harga Rumah</h3>
+				<p>
+					Type Almanda = 120000000<br>
+					Type Mawar   = 130000000<br>
+					Uang muka sebesar 20% dari total harga rumah
+				</p>
+			</div>
+		</div>
+
+		<div class="bottomtable">
+			<label for="">Program Kredit Rumah</label>
+			<label for="">=============================</label>
+			<table>
+				<tr>
+					<td width="150px">Type Rumah</td>
+					<td width="20px">=</td>
+					<td><div id="namarumah"></div></td>
+				</tr>
+				<tr>
+					<td>Harga Rumah</td>
+					<td>=</td>
+					<td><div id="hargarumah"></div></td>
+				</tr>
+				<tr>
+					<td>Uang Muka</td>
+					<td>=</td>
+					<td><input type="text" name="uangmuka" id="uangmuka"></td>
+				</tr>
+				<tr>
+					<td>Sisa</td>
+					<td>=</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>Lama Kredit</td>
+					<td>=</td>
+					<td><input type="text" id="lamakreditoutput"></td>
+				</tr>
+				<tr>
+					<td>Angsuran</td>
+					<td>=</td>
+					<td></td>
+				</tr>
+			</table>
+			<div class="table2">
+				<table border="1px">
+					<thead>
+						<th>Bulan</th>
+						<th>Angsuran</th>
+						<th>Sisa</th>
+					</thead>
+					<tbody>
+						<td>1</td>
+						<td>......</td>
+						<td>......</td>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</form>
+</body>
+</html>
