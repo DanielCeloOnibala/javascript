@@ -11,9 +11,11 @@
       if(namarumah=="almanda")
       {
         document.getElementById("tampil").innerHTML="ALMANDA";
+        document.form.hargarumah.value=120000000;
       } else if (namarumah=="mawar") 
       {
         document.getElementById("tampil").innerHTML="MAWAR";
+        document.form.hargarumah.value=130000000;
       }      
     }
     function proses()
@@ -21,6 +23,14 @@
       var x;
       x = document.getElementById("lamakreditinput").value;
       document.getElementById("lamakreditoutput").value=x;
+
+      var hargarumah = parseFloat(document.form.hargarumah.value)
+      if (isNaN(hargarumah))
+      {
+        hargarumah="";
+      }      
+      var hasiluangmuka = hargarumah * 0.20;
+      document.form.uangmuka.value=+hasiluangmuka;
     }
   </script>
 </head>
@@ -43,6 +53,16 @@
         <td>Lama Kredit</td>
         <td>=</td>
         <td><input type="text" id="lamakreditinput"></td>
+      </tr>
+      <tr>
+        <td>Harga Rumah</td>
+        <td>=</td>
+        <td><input type="text" name="hargarumah" id="hargarumah"></td>
+      </tr>
+      <tr>
+        <td>Uang Muka</td>
+        <td>=</td>
+        <td><input type="text" id="uangmuka" name="uangmuka"></td>
       </tr>
     </table>
     <input type="button" value="Proses" onclick="proses ()">

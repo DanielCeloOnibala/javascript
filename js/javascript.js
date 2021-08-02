@@ -1,16 +1,24 @@
 function pilih()
 {	
+	
 	var typerumah=document.getElementById("isiform").kategori.value;
 	if (typerumah=="almanda")
 	{
 		document.getElementById("namarumah").innerHTML="ALMANDA";
-		document.getElementById("hargarumah").innerHTML=120000000;
+		document.isiform.hargarumah.value=120000000;
 	} 
 	else if (typerumah=="mawar")
 	{
 		document.getElementById("namarumah").innerHTML="MAWAR";
-		document.getElementById("hargarumah").innerHTML=130000000;
+		document.isiform.hargarumah.value=130000000;
 	}
+	var hargarumah = parseFloat(document.isiform.hargarumah.value)
+	if (isNaN(hargarumah))
+	{
+		hargarumah="";
+	}      
+	var hasiluangmuka = hargarumah * 0.20;
+	document.isiform.uangmuka.value=+hasiluangmuka;
 
 }
 function proses()

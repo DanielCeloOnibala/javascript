@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function kredit()
+        {
+           var merk=document.form.merk.value;
+           var harga=document.form.harga.value;
+           var dp=document.form.dp.value;
+           var lama_kredit=document.form.lama_kredit.value;
+           var sisa_kredit=document.form.sisa_kredit.value;
+           var sisa_kredit=harga-dp;
+           var cicilan=sisa_kredit/(lama_kredit*12);
+           document.form.cicilan.value=cicilan;
+           document.form.sisa_kredit.value=sisa_kredit;
+
+       }
+
+   </script>
+</head>
+<body>
+    <form name=form>
+        <center>
+            PROGEAM CICILAN MOTOR
+            <hr>
+            <table>
+                <tr><td>MERK<td><input name=merk size=20>
+                    <tr><td>HARGA<td><input name=harga size=20>
+                        <tr><td>DP<td><input name=dp size=20>
+
+
+                            <tr><td>LAMA KREDIT<td><input name=lama_kredit size=20>
+                                <tr><td colspan=2><hr>
+                                    <tr><td>SISA KREDIT<td><input name=sisa_kredit size=20>
+                                        <tr><td>CICILAN PERBULAN<td><input name=cicilan size=20>
+                                        </table>
+                                        <hr>
+                                        <input type=button value=" HITUNG " onclick="kredit()">
+                                        <input type=reset value" CLEAR ">
+                                    </form>
+
+                                </body>
+                                </html>
