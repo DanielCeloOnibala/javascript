@@ -1,0 +1,51 @@
+/*Style*/
+	body {
+		background-color: #eaeaea;
+	}
+	.container {
+		padding: 20px;
+		background-color: white;
+		margin-right: 500px;
+	}
+	table {
+		font: 17px century gothic;
+	}
+	select {
+		padding: 5px 20px;
+		font: 15px arial, sans-serif;
+		width: 100%;
+	}
+	input {
+		font: 15px arial, sans-serif;
+		padding: 5px 0 5px 0 ;
+	}
+	input:hover {
+		background-color: lightcyan;
+	}
+	.tombol input {
+		padding: 10px;
+		margin-right: 10px;
+		border-radius: 6px;
+		border: 0px;
+	}
+	.info {
+		text-align: left;
+		font: 20px arial, sans-serif;
+	}
+	.info p {
+		font: 14px arial, sans-serif;
+	}
+	.bottomtable {
+		display: grid;
+		font: 15px century gothic;
+		text-align: left;
+		padding: 20px;
+		background-color: white;
+		margin-right: 500px;
+	}
+	.bottomtable table {
+		margin-left: 0px;
+	}
+	.bottomtable .table2 {
+		margin-top: 30px;
+	}
