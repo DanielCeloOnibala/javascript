@@ -15,82 +15,71 @@
 				<tr>
 					<td width="140px">Type Rumah</td>
 					<td align="left">
-					<select name="kategori" id="kategori" onchange="pilih ()">
-						<option disabled="">Pilihan Type Rumah</option>
-						<option value="almanda">Almanda</option>
-						<option value="mawar">Mawar</option>
-					</select></td>
-				</tr>
-				<tr>
-					<td>Lama Kredit</td>
-					<td align="left"><input type="text" id="lamakreditinput"></td>
-				</tr>
-			</table>
-			<hr>
-			<div class="tombol">
-				<input type="button" value="Proses" onclick="proses ()">
-				<input type="reset" value="Reset">
-			</div>
-			<div class="info">
-				<h3>Harga Rumah</h3>
-				<p>
-					Type Almanda = 120000000<br>
-					Type Mawar   = 130000000<br>
-					Uang muka sebesar 20% dari total harga rumah
-				</p>
-			</div>
-		</div>
-
-		<div class="bottomtable">
-			<label for="">Program Kredit Rumah</label>
-			<label for="">=============================</label>
-			<table>
-				<tr>
-					<td width="150px">Type Rumah</td>
-					<td width="20px">=</td>
-					<td><div id="namarumah"></div></td>
-				</tr>
-				<tr>
-					<td>Harga Rumah</td>
-					<td>=</td>
-					<td><input type="text" name="hargarumah" id="hargarumah"></div></td>
-				</tr>
-				<tr>
-					<td>Uang Muka</td>
-					<td>=</td>
-					<td><input type="text" name="uangmuka" id="uangmuka"></td>
-				</tr>
-				<tr>
-					<td>Sisa</td>
-					<td>=</td>
-					<td></td>
-				</tr>
-				<tr>
-					<td>Lama Kredit</td>
-					<td>=</td>
-					<td><input type="text" id="lamakreditoutput" size="3">&nbsp;Bulan</td>
-				</tr>
-				<tr>
-					<td>Angsuran</td>
-					<td>=</td>
-					<td></td>
-				</tr>
-			</table>
-			<div class="table2">
-				<table border="1px">
-					<thead>
-						<th>Bulan</th>
-						<th>Angsuran</th>
-						<th>Sisa</th>
-					</thead>
-					<tbody>
-						<td>1</td>
-						<td>......</td>
-						<td>......</td>
-					</tbody>
+						<select name="kategori" id="kategori" onchange="pilih ()">
+							<option disabled="">Pilihan Type Rumah</option>
+							<option value="almanda">Almanda</option>
+							<option value="mawar">Mawar</option>
+						</select></td>
+					</tr>
+					<tr>
+						<td>Lama Kredit</td>
+						<td align="left"><input type="text" id="lamakreditinput"></td>
+					</tr>
 				</table>
+				<hr>
+				<div class="tombol">
+					<input type="button" value="Proses" onclick="proses ()">
+					<input type="reset" value="Reset">
+				</div>
+				<div class="info">
+					<h3>Harga Rumah</h3>
+					<p>
+						Type Almanda = 120000000<br>
+						Type Mawar   = 130000000<br>
+						Uang muka sebesar 20% dari total harga rumah
+					</p>
+				</div>
 			</div>
-		</div>
-	</form>
-</body>
-</html>
+
+			<div class="bottomtable">
+				<label for="">Program Kredit Rumah</label>
+				<label for="">=============================</label>
+				<table>
+					<tr>
+						<td width="150px">Type Rumah</td>
+						<td width="20px">=</td>
+						<td><div id="namarumah"></div></td>
+					</tr>
+					<tr>
+						<td>Harga Rumah</td>
+						<td>=</td>
+						<td><input type="text" name="hargarumah" id="hargarumah"></div></td>
+					</tr>
+					<tr>
+						<td>Uang Muka</td>
+						<td>=</td>
+						<td><input type="text" name="uangmuka" id="uangmuka"></td>
+					</tr>
+					<tr>
+						<td>Sisa</td>
+						<td>=</td>
+						<td><input type="text" name="sisa" id="sisa"></td>
+					</tr>
+					<tr>
+						<td>Lama Kredit</td>
+						<td>=</td>
+						<td><input type="text" id="lamakreditoutput" size="3">&nbsp;Bulan</td>
+					</tr>
+					<tr>
+						<td>Angsuran</td>
+						<td>=</td>
+						<td><input type="text" id="angsuran" name="angsuran"></td>
+					</tr>
+				</table>
+				<div class="table2">
+						<textarea name="ohasil" rows="15" cols="70">Hasil akan muncul di sini</textarea>
+				</div>
+			</div>
+		</form>
+	</body>
+	</html>
