@@ -17,10 +17,6 @@ function proses(){
           // document.getElementById("outputPajak").innerHTML="30%"; 
           pajak = .3;      
         break;
-  
-      default:
-          alert("PILIH KATEGORI TERLEBIH DAHULU!");
-          break;
   }
   // Rumus
   // Ambil nilai input jumlah
@@ -66,10 +62,7 @@ function proses(){
       hasilAbodemen += abodemen+ "<br>";
       hasilSubtotal += subtotal + "<br>";
      
-    }else{
-      alert("PILIH KATEGORI TERLEBIH DAHULU!");
     }
-
     // tampilkan
     document.getElementById("outjumlah").innerHTML= jumlahPemakaian;
     document.getElementById("outTarif").innerHTML= teks;
