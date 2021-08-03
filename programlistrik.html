@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Program Penghitungan Tagihan Listrik</title>
+	<style type="text/css">
+	body {
+		background-color: lightblue;
+	}
+	.content {
+		padding: 5px;
+		border-radius: 20px;
+		background-color: lightcyan;
+		margin-left: 20px;
+		margin-right: 700px;
+		text-align: center;
+	}
+	.content h1 {
+		color: grey;
+	}
+	.content table {
+		margin: auto;
+	}
+	.content td {
+		text-align: left;
+		padding: 5px;
+	}
+	.content select {
+		height: 30px;
+		width: 100%;
+	}
+	.content hr {
+		background-color: lightgrey;
+		height: 2px;
+		width: 80%;
+	}
+	.content2 {
+		padding: 10px;
+	}
+	.table {
+		border-collapse: collapse;
+	}
+	.table tr:hover {
+		background-color: lightgrey;
+	}
+	.table tr td {
+		border: 1px solid #999;
+		padding: 8px 20px;
+	}
+	.table input {
+		width: 200px;
+		height: 20px;
+	}
+	.button {
+		padding: 25px;
+	}
+	.content .btn {
+		box-sizing: border-box;
+		border-radius: 9px;
+		border: 0px;
+		font-size: 20px;
+		font-family: century gothic;
+		padding: 10px;
+		text-decoration: none;
+		background-color: lightblue;
+	}
+	.content .btn:hover {
+		background-color: white;
+	}
+</style>
+<script language="javascript">
+	function proses()
+	{
+		var nama = document.getElementById("namainput").value;
+		document.getElementById("tampilnama").value=nama;
+
+		var pemakaian = document.getElementById("pemakaian").value;
+		document.getElementById("tampilpemakaian").value=pemakaian;
+
+		var kategori = document.getElementById("formtagihan").kategori.value;
+		if (kategori=="sosial")
+		{
+			document.formtagihan.tampilkategori.value="Sosial";
+		}
+		else if (kategori=="rumah")
+		{
+			document.formtagihan.tampilkategori.value="Rumah";
+		}
+		else if (kategori=="industri")
+		{
+			document.formtagihan.tampilkategori.value="Industri";
+		}
+		var hasil="";
+
+		for(i=1;i<=x;i++)
+		{
+			angsuran= (hasilsisa-hasilangsuran) ;
+			hasil=hasil+"Angsuran ke-"+i+"	Rp. "+hasilangsuran+" = Rp. "+angsuran+"\n";
+		}
+		document.formtagihan.ohasil.value=hasil;
+  // Rumus
+  // Ambil nilai input jumlah
+  let y=jumlah;
+  // variabel
+  let tarifSosial = 0;
+  let tarifRumah = 0;
+  let tarifIndustri = 0;
+  let abodemen;
+  let subtotal;
+  
+  let teks = "";
+  let jumlahPemakaian = "";
+  let hasilAbodemen = "";
+  let hasilSubtotal = "";
+  for(let i=1; i <= y; i++){
+  	jumlahPemakaian +=+ i + "<br>";
+  	if(kategori == "rumah"){
+  		tarifRumah += 500;
+  		teks += tarifRumah + "<br>";
+
+  		abodemen = 30000;
+  		subtotal = abodemen+tarifRumah;
+
+  		hasilAbodemen += abodemen+ "<br>";
+  		hasilSubtotal += subtotal + "<br>";
+  	}else if(kategori == "sosial"){
+  		tarifSosial += 300;
+  		teks += tarifSosial + "<br>";
+
+  		abodemen = 10000;
+  		subtotal = abodemen+tarifSosial;
+
+  		hasilAbodemen += abodemen+ "<br>";
+  		hasilSubtotal += subtotal + "<br>";
+  	}else if(kategori == "industri"){
+  		tarifIndustri += 1000;
+  		teks += tarifIndustri + "<br>";
+
+  		abodemen = 50000;
+  		subtotal = abodemen+tarifIndustri;
+
+  		hasilAbodemen += abodemen+ "<br>";
+  		hasilSubtotal += subtotal + "<br>";
+
+  	}else{
+  		alert("PILIH KATEGORI TERLEBIH DAHULU!");
+  	}
+  }
+}
+</script>
+</head>
+<body>
+	<form action="" name="formtagihan" id="formtagihan">
+		<div class="content">	
+			<h1>Menghitung Biaya Tagihan Listrik</h1>
+			<h1>PLN Bandung</h1>
+			<br>
+			<table class="table">
+				<tr>
+					<td>Nama Pelanggan</td>
+					<td>:</td>
+					<td><input type="text" name="namainput" id="namainput"></td>
+				</tr>
+				<tr>
+					<td>Kategori</td>
+					<td>:</td>
+					<td><select name="kategori" id="kategori" onchange="">
+						<option value="" selected="">Pilihan Kategori</option>
+						<option value="sosial">Sosial</option>
+						<option value="rumah">Rumah</option>
+						<option value="industri">Industri</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td>Jumlah Pemakaian Listrik</td>
+					<td>:</td>
+					<td><input type="text" name="pemakaian" id="pemakaian"></td>
+				</tr>
+			</table>
+			<br>
+			<br>	
+			<input type="button" class="btn" value="Proses" onclick="proses ()">
+			<input type="reset" class="btn" value="Reset">
+			<br>
+			<br>
+			<hr>
+			<div class="content2">
+				<h1>TAGIHAN LISTRIK</h1>
+				<table class="table">
+					<tr>
+						<td>Nama Pelanggan</td>
+						<td>:</td>
+						<td><input type="text" name="tampilnama" id="tampilnama" readonly=""></td>
+					</tr>
+					<tr>
+						<td>Kategori</td>
+						<td>:</td>
+						<td><input type="text" name="tampilkategori" id="tampilkategori" readonly=""></td>
+					</tr>
+					<tr>
+						<td>Jumlah Pemakaian Listrik</td>
+						<td>:</td>
+						<td><input type="text" name="tampilpemakaian" id="tampilpemakaian" readonly=""></td>
+					</tr>
+				</table>
+				<br>
+				<br>
+				<h4><b>Rincian Tagihan</b></h4>
+				<table cellpadding="7">
+					<tr>
+						<td>Jumlah</td>
+						<td>Tarif per KWh</td>
+						<td>Abodemen</td>
+						<td>Sub Total</td>
+					</tr>
+					<tr>
+						<td id="outjumlah"></td>
+						<td id="outTarif"></td>
+						<td id="outAbodemen"></td>
+						<td id="outSubtotal"></td>
+					</tr>
+				</table>
+				<table cellpadding="5">
+					<tr>
+						<td>Subtotal</td>
+						<td>:</td>
+						<td id="outputTotal"></td>
+					</tr>
+					<tr>
+						<td>Pajak</td>
+						<td>:</td>
+						<td id="outputPajak"></td>
+					</tr>
+					<tr>
+						<td>Bayar</td>
+						<td>:</td>
+						<td id="outputBayar"></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</form>
+</body>
+</html>

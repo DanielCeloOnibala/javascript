@@ -34,10 +34,12 @@ function proses()
 	document.isiform.angsuran.value=+hasilangsuran;
 
 	var hasil="";
+	var sisa=hasilsisa;
+	var totangsuran=hasilangsuran;
 	for(i=1;i<=x;i++)
 	{
-		angsuran= (hasilsisa-hasilangsuran) ;
-		hasil=hasil+"Angsuran ke-"+i+"	Rp. "+hasilangsuran+" = Rp. "+angsuran+"\n";
+		angsuran= (sisa-totangsuran) ;
+		hasil=hasil+"Angsuran ke-"+i+"	Rp. "+totangsuran+" = Rp. "+angsuran+"\n";
 	}
 	document.isiform.ohasil.value=hasil;
 

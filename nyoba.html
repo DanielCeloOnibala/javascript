@@ -24,6 +24,10 @@
       x = document.getElementById("lamakreditinput").value;
       document.getElementById("lamakreditoutput").value=x;
 
+      var nama;
+      nama = document.getElementById("nama").value;
+      document.getElementById("namakreditoutput").value=nama;
+
       var hargarumah = parseFloat(document.form.hargarumah.value)
       if (isNaN(hargarumah))
       {
@@ -64,12 +68,20 @@
         <td>=</td>
         <td><input type="text" id="uangmuka" name="uangmuka"></td>
       </tr>
+      <tr>
+        <td>Nama Nasabah</td>
+        <td>=</td>
+        <td><input type="text" id="nama" name="nama"></td>
+      </tr>
     </table>
     <input type="button" value="Proses" onclick="proses ()">
     <input type="reset" value="Reset">
     <br>
     <label for="">Lama Kredit Output</label>
     <input type="text" id="lamakreditoutput">
+    <br>
+    <label for="">Nama Kredit Output</label>
+    <input type="text" id="namakreditoutput">
   </form>
 </body>
 </html>
