@@ -1,0 +1,215 @@
+ <!doctype html>
+    <html lang="en">
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Menghitung Tagihan Listrik</title>
+    </head>
+    <script language="javascript">
+        function proses(){
+            var kategori = document.getElementById("kategori").value;
+            let jumlah = document.getElementById("jumlah").value;
+
+            let pajak;
+    // Pilih Kategori
+    switch (kategori) {
+      case "sosial":
+        // document.getElementById("outputPajak").innerHTML="0%";
+        pajak = 0;
+        break;
+        case "rumah":
+            // document.getElementById("outputPajak").innerHTML="10%";
+            pajak = .1;
+            break;
+            case "industri":
+          // document.getElementById("outputPajak").innerHTML="30%"; 
+          pajak = .3;      
+          break;
+      }
+  // Rumus
+  // Ambil nilai input jumlah
+  let y=jumlah;
+  // variabel
+  let tarifSosial = 0;
+  let tarifRumah = 0;
+  let tarifIndustri = 0;
+  let abodemen;
+  let subtotal;
+  
+  let teks = "";
+  let jumlahPemakaian = "";
+  let hasilAbodemen = "";
+  let hasilSubtotal = "";
+  for(let i=1; i <= y; i++){
+    jumlahPemakaian +=+ i + "<br>";
+    if(kategori == "rumah"){
+      tarifRumah += 500;
+      teks += tarifRumah + "<br>";
+
+      abodemen = 30000;
+      subtotal = abodemen+tarifRumah;
+      
+      hasilAbodemen += abodemen+ "<br>";
+      hasilSubtotal += subtotal + "<br>";
+  }else if(kategori == "sosial"){
+      tarifSosial += 300;
+      teks += tarifSosial + "<br>";
+      
+      abodemen = 10000;
+      subtotal = abodemen+tarifSosial;
+
+      hasilAbodemen += abodemen+ "<br>";
+      hasilSubtotal += subtotal + "<br>";
+  }else if(kategori == "industri"){
+      tarifIndustri += 1000;
+      teks += tarifIndustri + "<br>";
+      
+      abodemen = 50000;
+      subtotal = abodemen+tarifIndustri;
+
+      hasilAbodemen += abodemen+ "<br>";
+      hasilSubtotal += subtotal + "<br>";
+
+  }
+    // tampilkan
+    document.getElementById("outjumlah").innerHTML= jumlahPemakaian;
+    document.getElementById("outTarif").innerHTML= teks;
+    document.getElementById("outAbodemen").innerHTML= hasilAbodemen;
+    document.getElementById("outSubtotal").innerHTML= hasilSubtotal;
+    if(i==i){
+      document.getElementById("outputTotal").innerHTML= subtotal;  
+      let outpajak=pajak*subtotal;
+      document.getElementById("outputPajak").innerHTML= outpajak;
+      let bayar = outpajak + subtotal;
+      document.getElementById("outputBayar").innerHTML= bayar;
+  }
+}
+
+}
+</script>
+<style>
+body {
+    font-family: century gothic;
+}
+.header a {
+    text-decoration: none;
+    color: blue;
+    display: inline-block;
+    padding: 20px;
+}
+.container {
+    width: 500px;
+    border: 2px solid black;
+    background-color: #e1e1d0;
+    padding: 40px;
+    text-align: center;
+}
+.container .table1 {
+    border-collapse: collapse;
+}
+.container .table1 tr td {
+    text-align: left;
+    border: 1px solid #999;
+    padding: 8px 20px;
+}
+.container .table1 input {
+    height: 35px;
+    width: 250px;
+}
+.container .table1 .btn {
+    background-color: black;
+}
+.container select {
+    height: 35px;
+    width: 100%;
+}
+</style>
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <div class="header">
+            <a class="navbar-brand" href="index.html"><img src="gambar/logo-web-preview.png" alt="" width="90px"></a>
+            <a href="javascript2.html" class="nav-link">JavaScript2</a>
+            <a href="javascript3.html" class="nav-link">JavaScript3</a>
+            <a href="javascript4.html" class="nav-link">JavaScript4</a>
+            <a href="programkredit.html" class="nav-link">PROGRAM KREDIT RUMAH</a>
+            <a href="hitunglistrik.html" class="nav-link">PROGRAM TAGIHAN LISTRIK</a>
+        </div>
+    </nav>
+    <form action="">
+        <div class="container">
+            <h1>Menghitung Tagihan</h1>
+            <h1>Listrik PLN Bandung</h1>
+            <table class="table1">
+                <tr>
+                    <td>Nama pelanggan</td>
+                    <td>:</td>
+                    <td>
+                        <input class="col-sm-12" id="Nama" type="text" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Kategori</td>
+                    <td>:</td>
+                    <td>
+                        <select name="kategori" id="kategori" class="col-sm-12 form-select-sm">
+                            <option selected>Pilih Kategori</option>
+                            <option name="kategori" value="sosial">Sosial</option>
+                            <option name="kategori" value="rumah">Rumah</option>
+                            <option name="kategori" value="industri">Industri</option>
+                        </select>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>Jumlah Pemakaian Listrik</td>
+                    <td>:</td>
+                    <td>
+                        <input class="col-sm-12" id="jumlah" type="text">
+                    </td>
+                </tr>
+            </table>
+            <br>            
+            <hr>
+            <br>
+
+            <h4><b>Rincian Tagihan</b></h4>
+            <table cellpadding="7">
+                <tr>
+                    <td>Jumlah</td>
+                    <td>Tarif per KWh</td>
+                    <td>Abodemen</td>
+                    <td>Sub Total</td>
+                </tr>
+                <tr>
+                    <td id="outjumlah"></td>
+                    <td id="outTarif"></td>
+                    <td id="outAbodemen"></td>
+                    <td id="outSubtotal"></td>
+                </tr>
+            </table>
+            <table cellpadding="5">
+                <tr>
+                    <td>Subtotal</td>
+                    <td>:</td>
+                    <td id="outputTotal"></td>
+                </tr>
+                <tr>
+                    <td>Pajak</td>
+                    <td>:</td>
+                    <td id="outputPajak"></td>
+                </tr>
+                <tr>
+                    <td>Bayar</td>
+                    <td>:</td>
+                    <td id="outputBayar"></td>
+                </tr>
+            </table>
+            <input type="button" value="Proses" onclick="proses ()">
+            <input type="reset" value="Reset">
+        </form>
+    </div>
+</body>
+
+</html>

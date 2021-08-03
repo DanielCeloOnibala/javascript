@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script language="javascript">
+    function pilih()
+    {
+      var namarumah = document.getElementById("form").kategori.value;
+      if(namarumah=="almanda")
+      {
+        document.getElementById("tampil").innerHTML="ALMANDA";
+        document.form.hargarumah.value=120000000;
+      } else if (namarumah=="mawar") 
+      {
+        document.getElementById("tampil").innerHTML="MAWAR";
+        document.form.hargarumah.value=130000000;
+      }      
+    }
+    function proses()
+    {
+      var x;
+      x = document.getElementById("lamakreditinput").value;
+      document.getElementById("lamakreditoutput").value=x;
+
+      var nama;
+      nama = document.getElementById("nama").value;
+      document.getElementById("namakreditoutput").value=nama;
+
+      var hargarumah = parseFloat(document.form.hargarumah.value)
+      if (isNaN(hargarumah))
+      {
+        hargarumah="";
+      }      
+      var hasiluangmuka = hargarumah * 0.20;
+      document.form.uangmuka.value=+hasiluangmuka;
+    }
+  </script>
+</head>
+<body>
+  <form name="form" id="form">
+    <label for="">Pilihan Type Rumah</label>
+    <select name="kategori" id="kategori" onchange="pilih ()">
+      <option value="almanda">Almanda</option>
+      <option value="mawar">Mawar</option>
+    </select>
+    <br>
+    <br>
+    <table>
+      <tr>
+        <td>Type Rumah</td>
+        <td>=</td>
+        <td><div id="tampil"></div></td>
+      </tr>
+      <tr>
+        <td>Lama Kredit</td>
+        <td>=</td>
+        <td><input type="text" id="lamakreditinput"></td>
+      </tr>
+      <tr>
+        <td>Harga Rumah</td>
+        <td>=</td>
+        <td><input type="text" name="hargarumah" id="hargarumah"></td>
+      </tr>
+      <tr>
+        <td>Uang Muka</td>
+        <td>=</td>
+        <td><input type="text" id="uangmuka" name="uangmuka"></td>
+      </tr>
+      <tr>
+        <td>Nama Nasabah</td>
+        <td>=</td>
+        <td><input type="text" id="nama" name="nama"></td>
+      </tr>
+    </table>
+    <input type="button" value="Proses" onclick="proses ()">
+    <input type="reset" value="Reset">
+    <br>
+    <label for="">Lama Kredit Output</label>
+    <input type="text" id="lamakreditoutput">
+    <br>
+    <label for="">Nama Kredit Output</label>
+    <input type="text" id="namakreditoutput">
+  </form>
+</body>
+</html>
